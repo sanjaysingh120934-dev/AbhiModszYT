@@ -14,7 +14,35 @@ body{
     overflow-x:hidden;
 }
 
-/* Background GIF Layers */
+/* Loader */
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity 1s ease;
+}
+
+#loader img{
+    width:220px;
+    border-radius:12px;
+    box-shadow:0 0 30px #00ff00;
+}
+
+#loader h2{
+    color:#00ff00;
+    margin-top:20px;
+    text-shadow:0 0 15px #00ff00;
+}
+
+/* Background GIF */
 .bg{
     position:fixed;
     top:0;
@@ -24,7 +52,7 @@ body{
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    z-index:-3;
+    z-index:-2;
     opacity:0;
     transition:opacity 2s ease-in-out;
     filter:brightness(0.35) contrast(1.2);
@@ -39,14 +67,6 @@ body{
     background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/gojo2.gif');
 }
 
-/* Matrix */
-#matrix{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-2;
-}
-
 /* Main Container */
 .container{
     max-width:900px;
@@ -59,7 +79,6 @@ h1{
     text-shadow:0 0 20px #00ff00;
 }
 
-/* Tabs */
 .tabs{
     display:flex;
     gap:10px;
@@ -80,7 +99,6 @@ h1{
     color:black;
 }
 
-/* Tab Content */
 .tab-content{
     display:none;
 }
@@ -89,7 +107,6 @@ h1{
     display:block;
 }
 
-/* Cards */
 .card{
     background:rgba(0,0,0,0.85);
     border:1px solid #00ff00;
@@ -116,7 +133,6 @@ h1{
     border:1px solid #00ff00;
 }
 
-/* Buttons */
 button{
     width:100%;
     padding:12px;
@@ -132,7 +148,6 @@ button:hover{
     color:black;
 }
 
-/* Counter */
 .counter{
     text-align:center;
     margin-bottom:20px;
@@ -145,12 +160,15 @@ pre{
 </head>
 <body>
 
-<!-- Background GIFs -->
+<!-- Loader -->
+<div id="loader">
+    <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif">
+    <h2>AbhiModszYT Loading...</h2>
+</div>
+
+<!-- Background -->
 <div id="bg1" class="bg"></div>
 <div id="bg2" class="bg"></div>
-
-<!-- Matrix -->
-<canvas id="matrix"></canvas>
 
 <div class="container">
 <h1>AbhiModszYT Mods Hub</h1>
@@ -165,7 +183,7 @@ pre{
 <button class="tab-btn" onclick="openTab('test')">TEST BUILD</button>
 </div>
 
-<!-- APK Tab -->
+<!-- APK -->
 <div id="apk" class="tab-content active">
 
 <div class="card">
@@ -175,13 +193,10 @@ pre{
 <pre>
 Version: 0.4.1
 Package: ru.azurinteractive.robotwarfare
-
 ➤ No Reload
 ➤ No Cooldown Ability
 ➤ Wall Shots
 ➤ Auto Fire
-➤ Fire Range 9999m
-➤ Radius Range 999999
 </pre>
 <button onclick="downloadLink('https://xpshort.com/Vp18V8L')">⬇ Download</button>
 </div>
@@ -194,34 +209,12 @@ Package: ru.azurinteractive.robotwarfare
 <pre>
 Version: 11.8.0
 Package: com.pixonic.wwr
-
-➤ No Gravity
 ➤ Auto Fire
-➤ Speed Hacks
-➤ Teleport Map
-➤ AntiStealth Enemy
-➤ Weapon Range 1100m
+➤ Speed Hack
+➤ Teleport
 </pre>
 <button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
-</div>
-</div>
-
-<div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
-<div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Mech_Arena_cover.jpg">
-<pre>
-Version: 3.420.00
-Package: com.plarium.mechlegion
-
-➤ Speed Hack
-➤ No Reload
-➤ Enemy Location
-➤ Range Shoot Distance
-</pre>
-<button onclick="downloadLink('https://xpshort.com/Dj8qhC')">⬇ 32 Bit</button>
-<button onclick="downloadLink('https://xpshort.com/XUQn')">⬇ 64 Bit</button>
 </div>
 </div>
 
@@ -229,26 +222,16 @@ Package: com.plarium.mechlegion
 
 <!-- LUA -->
 <div id="lua" class="tab-content">
-
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 Lua Script War Robots</div>
 <div class="card-body">
 <button onclick="downloadLink('https://xpshort.com/Ky2Meb')">⬇ Script Download</button>
 </div>
 </div>
-
-<div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 Lua Script Mech Arena</div>
-<div class="card-body">
-<button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script Download</button>
-</div>
 </div>
 
-</div>
-
-<!-- TEST BUILD -->
+<!-- TEST -->
 <div id="test" class="tab-content">
-
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 WR Test Build</div>
 <div class="card-body">
@@ -256,7 +239,6 @@ Package: com.plarium.mechlegion
 <button onclick="downloadLink('https://xpshort.com/e9h6Q')">⬇ 64 Bit</button>
 </div>
 </div>
-
 </div>
 
 <!-- Social -->
@@ -268,6 +250,16 @@ Package: com.plarium.mechlegion
 </div>
 
 <script>
+/* Loader */
+window.addEventListener("load", ()=>{
+    setTimeout(()=>{
+        document.getElementById("loader").style.opacity="0";
+        setTimeout(()=>{
+            document.getElementById("loader").style.display="none";
+        },1000);
+    },4000);
+});
+
 /* Tabs */
 function openTab(tab){
     document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
@@ -280,7 +272,7 @@ function toggleCard(el){
     body.style.display=body.style.display==="block"?"none":"block";
 }
 
-/* Download Counter */
+/* Counter */
 let count=1523;
 function downloadLink(link){
     count++;
@@ -288,7 +280,7 @@ function downloadLink(link){
     window.location.href=link;
 }
 
-/* Visitor Counter */
+/* Visitors */
 let visitors=87;
 setInterval(()=>{
     visitors+=Math.floor(Math.random()*3)-1;
@@ -297,7 +289,7 @@ setInterval(()=>{
     document.getElementById("visitorCount").innerText=visitors;
 },3000);
 
-/* GIF Switch */
+/* Background Switch */
 let current=1;
 setInterval(()=>{
     if(current===1){
@@ -310,40 +302,6 @@ setInterval(()=>{
         current=1;
     }
 },5000);
-
-/* Matrix */
-const canvas=document.getElementById("matrix");
-const ctx=canvas.getContext("2d");
-
-canvas.height=window.innerHeight;
-canvas.width=window.innerWidth;
-
-const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const fontSize=14;
-const columns=canvas.width/fontSize;
-const drops=[];
-
-for(let i=0;i<columns;i++) drops[i]=1;
-
-function draw(){
-    ctx.fillStyle="rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle="#00ff00";
-    ctx.font=fontSize+"px monospace";
-
-    for(let i=0;i<drops.length;i++){
-        const text=letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-        if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
-            drops[i]=0;
-        }
-        drops[i]++;
-    }
-}
-
-setInterval(draw,33);
 </script>
 
 </body>
