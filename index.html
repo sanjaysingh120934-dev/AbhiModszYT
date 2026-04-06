@@ -10,9 +10,20 @@ body{
     background:black;
     color:#00ff00;
     font-family:monospace;
+    overflow-x:hidden;
 }
-canvas{
-    position:fixed;
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.3) saturate(1.5) contrast(1.2);
+}
+#matrix {
+    position: fixed;
     top:0;
     left:0;
     z-index:-1;
@@ -95,6 +106,12 @@ pre{
 </head>
 <body>
 
+<!-- Anime Video Background -->
+<video id="bgVideo" autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/vimeo/213042/eye-face-girl-character-anime-1080p.mp4" type="video/mp4">
+</video>
+
+<!-- Matrix Canvas -->
 <canvas id="matrix"></canvas>
 
 <div class="container">
@@ -214,33 +231,30 @@ Package: com.plarium.mechlegion
 
 <script>
 function openTab(tab){
-document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-document.getElementById(tab).classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
 }
 function toggleCard(el){
-const body=el.nextElementSibling;
-body.style.display=body.style.display==="block"?"none":"block";
+    const body=el.nextElementSibling;
+    body.style.display=body.style.display==="block"?"none":"block";
 }
 
 let count=1523;
 function downloadLink(link){
-count++;
-document.getElementById("downloadCount").innerText=count;
-window.location.href=link;
+    count++;
+    document.getElementById("downloadCount").innerText=count;
+    window.location.href=link;
 }
 
 let visitors=87;
 setInterval(()=>{
-visitors+=Math.floor(Math.random()*3)-1;
-if(visitors<75) visitors=75;
-if(visitors>120) visitors=120;
-document.getElementById("visitorCount").innerText=visitors;
+    visitors+=Math.floor(Math.random()*3)-1;
+    if(visitors<75) visitors=75;
+    if(visitors>120) visitors=120;
+    document.getElementById("visitorCount").innerText=visitors;
 },3000);
 
-/* Firebase Ready:
-   Add your Firebase config here for real live stats
-*/
-
+/* Matrix Effect on top of video */
 const canvas=document.getElementById("matrix");
 const ctx=canvas.getContext("2d");
 canvas.height=window.innerHeight;
@@ -251,16 +265,17 @@ const columns=canvas.width/fontSize;
 const drops=[];
 for(let i=0;i<columns;i++) drops[i]=1;
 function draw(){
-ctx.fillStyle="rgba(0,0,0,0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#00ff00";
-ctx.font=fontSize+"px monospace";
-for(let i=0;i<drops.length;i++){
-const text=letters[Math.floor(Math.random()*letters.length)];
-ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
-drops[i]++;
-}}
+    ctx.fillStyle="rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="#00ff00";
+    ctx.font=fontSize+"px monospace";
+    for(let i=0;i<drops.length;i++){
+        const text=letters[Math.floor(Math.random()*letters.length)];
+        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+        if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+        drops[i]++;
+    }
+}
 setInterval(draw,33);
 </script>
 
