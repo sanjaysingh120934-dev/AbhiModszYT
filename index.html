@@ -52,7 +52,7 @@ body{
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    z-index:-2;
+    z-index:-3;
     opacity:0;
     transition:opacity 2s ease-in-out;
     filter:brightness(0.35) contrast(1.2);
@@ -67,6 +67,33 @@ body{
     background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/gojo2.gif');
 }
 
+/* Blue Aura */
+#aura{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 30% 40%, rgba(0,150,255,0.25), transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(0,200,255,0.20), transparent 45%);
+    animation:auraMove 8s infinite alternate ease-in-out;
+    mix-blend-mode:screen;
+}
+
+@keyframes auraMove{
+    0%{
+        transform:scale(1) translate(0,0);
+    }
+    50%{
+        transform:scale(1.1) translate(-20px,20px);
+    }
+    100%{
+        transform:scale(1.05) translate(20px,-20px);
+    }
+}
+
 /* Main Container */
 .container{
     max-width:900px;
@@ -79,6 +106,7 @@ h1{
     text-shadow:0 0 20px #00ff00;
 }
 
+/* Tabs */
 .tabs{
     display:flex;
     gap:10px;
@@ -99,6 +127,7 @@ h1{
     color:black;
 }
 
+/* Tab Content */
 .tab-content{
     display:none;
 }
@@ -107,6 +136,7 @@ h1{
     display:block;
 }
 
+/* Cards */
 .card{
     background:rgba(0,0,0,0.85);
     border:1px solid #00ff00;
@@ -133,6 +163,7 @@ h1{
     border:1px solid #00ff00;
 }
 
+/* Buttons */
 button{
     width:100%;
     padding:12px;
@@ -148,6 +179,7 @@ button:hover{
     color:black;
 }
 
+/* Counter */
 .counter{
     text-align:center;
     margin-bottom:20px;
@@ -169,6 +201,7 @@ pre{
 <!-- Background -->
 <div id="bg1" class="bg"></div>
 <div id="bg2" class="bg"></div>
+<div id="aura"></div>
 
 <div class="container">
 <h1>AbhiModszYT Mods Hub</h1>
@@ -194,9 +227,8 @@ pre{
 Version: 0.4.1
 Package: ru.azurinteractive.robotwarfare
 ➤ No Reload
-➤ No Cooldown Ability
-➤ Wall Shots
 ➤ Auto Fire
+➤ Wall Shots
 </pre>
 <button onclick="downloadLink('https://xpshort.com/Vp18V8L')">⬇ Download</button>
 </div>
@@ -272,7 +304,7 @@ function toggleCard(el){
     body.style.display=body.style.display==="block"?"none":"block";
 }
 
-/* Counter */
+/* Download Counter */
 let count=1523;
 function downloadLink(link){
     count++;
