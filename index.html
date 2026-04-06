@@ -3,99 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AbhiModszYT Premium</title>
-
+<title>AbhiModszYT Mods Hub</title>
 <style>
 body{
     margin:0;
     background:black;
     color:#00ff00;
     font-family:monospace;
-    overflow-x:hidden;
 }
-
 canvas{
     position:fixed;
     top:0;
     left:0;
     z-index:-1;
 }
-
 .container{
-    max-width:850px;
+    max-width:900px;
     margin:auto;
     padding:20px;
-    text-align:center;
 }
-
 h1{
-    font-size:42px;
+    text-align:center;
     text-shadow:0 0 20px #00ff00;
-    animation:glow 1s infinite alternate;
 }
-
-@keyframes glow{
-    from{ text-shadow:0 0 10px #00ff00; }
-    to{ text-shadow:0 0 25px #00ff00; }
-}
-
-.typing{
-    overflow:hidden;
-    white-space:nowrap;
-    border-right:3px solid #00ff00;
-    animation:typing 4s steps(40,end), blink .8s infinite;
+.tabs{
+    display:flex;
+    gap:10px;
+    justify-content:center;
     margin-bottom:20px;
 }
-
-@keyframes typing{
-    from{ width:0; }
-    to{ width:100%; }
+.tab-btn{
+    padding:10px 20px;
+    border:1px solid #00ff00;
+    background:black;
+    color:#00ff00;
+    cursor:pointer;
 }
-
-@keyframes blink{
-    50%{ border-color:transparent; }
+.tab-btn:hover{
+    background:#00ff00;
+    color:black;
 }
-
+.tab-content{
+    display:none;
+}
+.active{
+    display:block;
+}
 .card{
-    margin-top:20px;
-    padding:25px;
-    border:2px solid #00ff00;
-    border-radius:15px;
     background:rgba(0,0,0,0.85);
-    box-shadow:0 0 30px #00ff00;
-    text-align:left;
+    border:1px solid #00ff00;
+    border-radius:12px;
+    margin-top:15px;
+    box-shadow:0 0 15px #00ff00;
 }
-
-pre{
-    white-space:pre-wrap;
-    font-size:14px;
+.card-header{
+    padding:15px;
+    cursor:pointer;
+    font-weight:bold;
 }
-
+.card-body{
+    display:none;
+    padding:15px;
+}
+.card-body img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+    border:1px solid #00ff00;
+}
 button{
     width:100%;
-    padding:14px;
-    margin-top:12px;
+    padding:12px;
+    margin-top:10px;
     background:black;
     color:#00ff00;
     border:1px solid #00ff00;
-    border-radius:10px;
     cursor:pointer;
-    font-size:16px;
-    transition:.3s;
 }
-
 button:hover{
     background:#00ff00;
     color:black;
-    box-shadow:0 0 20px #00ff00;
-    transform:scale(1.03);
 }
-
 .counter{
-    margin-top:15px;
-    font-size:20px;
     text-align:center;
-    text-shadow:0 0 10px #00ff00;
+    margin-bottom:20px;
+}
+pre{
+    white-space:pre-wrap;
 }
 </style>
 </head>
@@ -104,115 +98,170 @@ button:hover{
 <canvas id="matrix"></canvas>
 
 <div class="container">
-    <h1>AbhiModszYT</h1>
+<h1>AbhiModszYT Mods Hub</h1>
 
-    <div class="typing">Initializing Full Premium Hacker Landing Page...</div>
+<div class="counter">
+⬇ Downloads: <span id="downloadCount">1523</span> | 👁 Online: <span id="visitorCount">87</span>
+</div>
 
-    <div class="card">
+<div class="tabs">
+<button class="tab-btn" onclick="openTab('apk')">APK</button>
+<button class="tab-btn" onclick="openTab('lua')">LUA</button>
+<button class="tab-btn" onclick="openTab('test')">TEST BUILD</button>
+</div>
+
+<!-- APK Tab -->
+<div id="apk" class="tab-content active">
+
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 Robot Warfare</div>
+<div class="card-body">
+<img src="https://upload.wikimedia.org/wikipedia/en/6/60/Robot_Warfare_cover.jpg" alt="Robot Warfare">
 <pre>
-🚀 APK DETAILS – WAR ROBOTS 🚀
+Version: 0.4.1
+Package: ru.azurinteractive.robotwarfare
 
-🎮 Game Name: War Robots
-🧩 Version: 11.8.0
-📦 Package: com.pixonic.wwr
+➤ No Reload
+➤ No Cooldown Ability
+➤ Wall Shots
+➤ Auto Fire
+➤ Fire Range 9999m
+➤ Radius Range 999999
+</pre>
+<button onclick="downloadLink('https://xpshort.com/Vp18V8L')">⬇ Download</button>
+</div>
+</div>
 
-🔥 WAR ROBOTS MOD FEATURES 🔥
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
+<div class="card-body">
+<img src="https://upload.wikimedia.org/wikipedia/en/8/8b/War_Robots_cover.jpg" alt="War Robots">
+<pre>
+Version: 11.8.0
+Package: com.pixonic.wwr
 
 ➤ No Gravity
 ➤ Auto Fire
 ➤ Speed Hacks
 ➤ Teleport Map
-➤ Fly & Underground
-➤ Auto Abilities
 ➤ AntiStealth Enemy
-➤ No Cooldown Skills
 ➤ Weapon Range 1100m
-➤ Radius Damage
-
-🗓️ Last Update: 2026/04/03
 </pre>
-
-<div class="counter">
-⬇ Downloads: <span id="downloadCount">1523</span>
+<button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
+</div>
 </div>
 
-<div class="counter">
-👁 Online Visitors: <span id="visitorCount">87</span>
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
+<div class="card-body">
+<img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Mech_Arena_cover.jpg" alt="Mech Arena">
+<pre>
+Version: 3.420.00
+Package: com.plarium.mechlegion
+
+➤ Speed Hack
+➤ No Reload
+➤ Enemy Location
+➤ Range Shoot Distance
+</pre>
+<button onclick="downloadLink('https://xpshort.com/Dj8qhC')">⬇ 32 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/XUQn')">⬇ 64 Bit</button>
+</div>
 </div>
 
-<button onclick="download32()">⬇ 32 Bit MOD Download</button>
-<button onclick="download64()">⬇ 64 Bit MOD Download</button>
+</div>
+
+<!-- LUA Tab -->
+<div id="lua" class="tab-content">
+
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 Lua Script War Robots</div>
+<div class="card-body">
+<button onclick="downloadLink('https://xpshort.com/Ky2Meb')">⬇ Script Download</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 Lua Script Mech Arena</div>
+<div class="card-body">
+<button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script Download</button>
+</div>
+</div>
+
+</div>
+
+<!-- TEST BUILD Tab -->
+<div id="test" class="tab-content">
+
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 WR Test Build</div>
+<div class="card-body">
+<button onclick="downloadLink('https://xpshort.com/MouWC4')">⬇ 32 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/e9h6Q')">⬇ 64 Bit</button>
+</div>
+</div>
+
+</div>
+
+<!-- Telegram & YouTube -->
+<div class="card">
 <button onclick="window.location.href='https://t.me/AM_YTSupport'">📢 Telegram Support</button>
 <button onclick="window.location.href='https://youtube.com/@AbhiModszYT'">▶ YouTube Channel</button>
+</div>
 
-    </div>
 </div>
 
 <script>
+function openTab(tab){
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+document.getElementById(tab).classList.add('active');
+}
+function toggleCard(el){
+const body=el.nextElementSibling;
+body.style.display=body.style.display==="block"?"none":"block";
+}
+
+let count=1523;
+function downloadLink(link){
+count++;
+document.getElementById("downloadCount").innerText=count;
+window.location.href=link;
+}
+
+let visitors=87;
+setInterval(()=>{
+visitors+=Math.floor(Math.random()*3)-1;
+if(visitors<75) visitors=75;
+if(visitors>120) visitors=120;
+document.getElementById("visitorCount").innerText=visitors;
+},3000);
+
+/* Firebase Ready:
+   Add your Firebase config here for real live stats
+*/
+
 const canvas=document.getElementById("matrix");
 const ctx=canvas.getContext("2d");
-
 canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
-
 const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const fontSize=14;
 const columns=canvas.width/fontSize;
 const drops=[];
-
 for(let i=0;i<columns;i++) drops[i]=1;
-
 function draw(){
-    ctx.fillStyle="rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle="#00ff00";
-    ctx.font=fontSize+"px monospace";
-
-    for(let i=0;i<drops.length;i++){
-        const text=letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-        if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
-            drops[i]=0;
-
-        drops[i]++;
-    }
-}
-
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="#00ff00";
+ctx.font=fontSize+"px monospace";
+for(let i=0;i<drops.length;i++){
+const text=letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+drops[i]++;
+}}
 setInterval(draw,33);
-
-let count=1523;
-
-function updateCounter(){
-    document.getElementById("downloadCount").innerText=count;
-}
-
-function download32(){
-    count++;
-    updateCounter();
-    window.location.href="https://xpshort.com/p56V";
-}
-
-function download64(){
-    count++;
-    updateCounter();
-    window.location.href="https://xpshort.com/4XC7N2";
-}
-
-let visitors=Math.floor(Math.random()*50)+80;
-
-function updateVisitors(){
-    let change=Math.floor(Math.random()*3)-1;
-    visitors+=change;
-
-    if(visitors<75) visitors=75;
-    if(visitors>120) visitors=120;
-
-    document.getElementById("visitorCount").innerText=visitors;
-}
-
-setInterval(updateVisitors,3000);
 </script>
 
 </body>
