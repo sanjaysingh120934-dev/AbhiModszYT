@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AbhiModszYT Mods Hub</title>
+
 <style>
 body{
     margin:0;
@@ -12,37 +13,60 @@ body{
     font-family:monospace;
     overflow-x:hidden;
 }
-#bgVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    filter: brightness(0.3) saturate(1.5) contrast(1.2);
-}
-#matrix {
-    position: fixed;
+
+/* Background GIF Layers */
+.bg{
+    position:fixed;
     top:0;
     left:0;
-    z-index:-1;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:-3;
+    opacity:0;
+    transition:opacity 2s ease-in-out;
+    filter:brightness(0.35) contrast(1.2);
 }
+
+#bg1{
+    background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif');
+    opacity:1;
+}
+
+#bg2{
+    background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/gojo2.gif');
+}
+
+/* Matrix */
+#matrix{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-2;
+}
+
+/* Main Container */
 .container{
     max-width:900px;
     margin:auto;
     padding:20px;
 }
+
 h1{
     text-align:center;
     text-shadow:0 0 20px #00ff00;
 }
+
+/* Tabs */
 .tabs{
     display:flex;
     gap:10px;
     justify-content:center;
     margin-bottom:20px;
 }
+
 .tab-btn{
     padding:10px 20px;
     border:1px solid #00ff00;
@@ -50,16 +74,22 @@ h1{
     color:#00ff00;
     cursor:pointer;
 }
+
 .tab-btn:hover{
     background:#00ff00;
     color:black;
 }
+
+/* Tab Content */
 .tab-content{
     display:none;
 }
+
 .active{
     display:block;
 }
+
+/* Cards */
 .card{
     background:rgba(0,0,0,0.85);
     border:1px solid #00ff00;
@@ -67,21 +97,26 @@ h1{
     margin-top:15px;
     box-shadow:0 0 15px #00ff00;
 }
+
 .card-header{
     padding:15px;
     cursor:pointer;
     font-weight:bold;
 }
+
 .card-body{
     display:none;
     padding:15px;
 }
+
 .card-body img{
     width:100%;
     border-radius:10px;
     margin-bottom:15px;
     border:1px solid #00ff00;
 }
+
+/* Buttons */
 button{
     width:100%;
     padding:12px;
@@ -91,14 +126,18 @@ button{
     border:1px solid #00ff00;
     cursor:pointer;
 }
+
 button:hover{
     background:#00ff00;
     color:black;
 }
+
+/* Counter */
 .counter{
     text-align:center;
     margin-bottom:20px;
 }
+
 pre{
     white-space:pre-wrap;
 }
@@ -106,12 +145,11 @@ pre{
 </head>
 <body>
 
-<!-- Anime Video Background -->
-<video id="bgVideo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/vimeo/213042/eye-face-girl-character-anime-1080p.mp4" type="video/mp4">
-</video>
+<!-- Background GIFs -->
+<div id="bg1" class="bg"></div>
+<div id="bg2" class="bg"></div>
 
-<!-- Matrix Canvas -->
+<!-- Matrix -->
 <canvas id="matrix"></canvas>
 
 <div class="container">
@@ -133,7 +171,7 @@ pre{
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 Robot Warfare</div>
 <div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/6/60/Robot_Warfare_cover.jpg" alt="Robot Warfare">
+<img src="https://upload.wikimedia.org/wikipedia/en/6/60/Robot_Warfare_cover.jpg">
 <pre>
 Version: 0.4.1
 Package: ru.azurinteractive.robotwarfare
@@ -152,7 +190,7 @@ Package: ru.azurinteractive.robotwarfare
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
 <div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/8/8b/War_Robots_cover.jpg" alt="War Robots">
+<img src="https://upload.wikimedia.org/wikipedia/en/8/8b/War_Robots_cover.jpg">
 <pre>
 Version: 11.8.0
 Package: com.pixonic.wwr
@@ -172,7 +210,7 @@ Package: com.pixonic.wwr
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
 <div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Mech_Arena_cover.jpg" alt="Mech Arena">
+<img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Mech_Arena_cover.jpg">
 <pre>
 Version: 3.420.00
 Package: com.plarium.mechlegion
@@ -189,7 +227,7 @@ Package: com.plarium.mechlegion
 
 </div>
 
-<!-- LUA Tab -->
+<!-- LUA -->
 <div id="lua" class="tab-content">
 
 <div class="card">
@@ -208,7 +246,7 @@ Package: com.plarium.mechlegion
 
 </div>
 
-<!-- TEST BUILD Tab -->
+<!-- TEST BUILD -->
 <div id="test" class="tab-content">
 
 <div class="card">
@@ -221,7 +259,7 @@ Package: com.plarium.mechlegion
 
 </div>
 
-<!-- Telegram & YouTube -->
+<!-- Social -->
 <div class="card">
 <button onclick="window.location.href='https://t.me/AM_YTSupport'">📢 Telegram Support</button>
 <button onclick="window.location.href='https://youtube.com/@AbhiModszYT'">▶ YouTube Channel</button>
@@ -230,15 +268,19 @@ Package: com.plarium.mechlegion
 </div>
 
 <script>
+/* Tabs */
 function openTab(tab){
     document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
     document.getElementById(tab).classList.add('active');
 }
+
+/* Cards */
 function toggleCard(el){
     const body=el.nextElementSibling;
     body.style.display=body.style.display==="block"?"none":"block";
 }
 
+/* Download Counter */
 let count=1523;
 function downloadLink(link){
     count++;
@@ -246,6 +288,7 @@ function downloadLink(link){
     window.location.href=link;
 }
 
+/* Visitor Counter */
 let visitors=87;
 setInterval(()=>{
     visitors+=Math.floor(Math.random()*3)-1;
@@ -254,28 +297,52 @@ setInterval(()=>{
     document.getElementById("visitorCount").innerText=visitors;
 },3000);
 
-/* Matrix Effect on top of video */
+/* GIF Switch */
+let current=1;
+setInterval(()=>{
+    if(current===1){
+        document.getElementById("bg1").style.opacity="0";
+        document.getElementById("bg2").style.opacity="1";
+        current=2;
+    }else{
+        document.getElementById("bg1").style.opacity="1";
+        document.getElementById("bg2").style.opacity="0";
+        current=1;
+    }
+},5000);
+
+/* Matrix */
 const canvas=document.getElementById("matrix");
 const ctx=canvas.getContext("2d");
+
 canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
+
 const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const fontSize=14;
 const columns=canvas.width/fontSize;
 const drops=[];
+
 for(let i=0;i<columns;i++) drops[i]=1;
+
 function draw(){
     ctx.fillStyle="rgba(0,0,0,0.05)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
+
     ctx.fillStyle="#00ff00";
     ctx.font=fontSize+"px monospace";
+
     for(let i=0;i<drops.length;i++){
         const text=letters[Math.floor(Math.random()*letters.length)];
         ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-        if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+
+        if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
+            drops[i]=0;
+        }
         drops[i]++;
     }
 }
+
 setInterval(draw,33);
 </script>
 
