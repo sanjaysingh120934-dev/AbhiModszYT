@@ -22,7 +22,7 @@ canvas{
 }
 
 .container{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
     padding:20px;
     text-align:center;
@@ -31,7 +31,7 @@ canvas{
 h1{
     font-size:42px;
     text-shadow:0 0 20px #00ff00;
-    animation: glow 1s infinite alternate;
+    animation:glow 1s infinite alternate;
 }
 
 @keyframes glow{
@@ -40,11 +40,11 @@ h1{
 }
 
 .typing{
-    width:100%;
     overflow:hidden;
     white-space:nowrap;
     border-right:3px solid #00ff00;
-    animation: typing 4s steps(40,end), blink .8s infinite;
+    animation:typing 4s steps(40,end), blink .8s infinite;
+    margin-bottom:20px;
 }
 
 @keyframes typing{
@@ -58,18 +58,12 @@ h1{
 
 .card{
     margin-top:20px;
-    padding:20px;
+    padding:25px;
     border:2px solid #00ff00;
     border-radius:15px;
-    background:rgba(0,0,0,0.8);
-    box-shadow:0 0 25px #00ff00;
+    background:rgba(0,0,0,0.85);
+    box-shadow:0 0 30px #00ff00;
     text-align:left;
-    animation:borderGlow 2s infinite alternate;
-}
-
-@keyframes borderGlow{
-    from{ box-shadow:0 0 10px #00ff00; }
-    to{ box-shadow:0 0 30px #00ff00; }
 }
 
 pre{
@@ -96,6 +90,13 @@ button:hover{
     box-shadow:0 0 20px #00ff00;
     transform:scale(1.03);
 }
+
+.counter{
+    margin-top:15px;
+    font-size:20px;
+    text-align:center;
+    text-shadow:0 0 10px #00ff00;
+}
 </style>
 </head>
 <body>
@@ -105,7 +106,7 @@ button:hover{
 <div class="container">
     <h1>AbhiModszYT</h1>
 
-    <div class="typing">Initializing Premium Hacker System...</div>
+    <div class="typing">Initializing Full Premium Hacker Landing Page...</div>
 
     <div class="card">
 <pre>
@@ -131,8 +132,16 @@ button:hover{
 🗓️ Last Update: 2026/04/03
 </pre>
 
-<button onclick="window.location.href='https://xpshort.com/p56V'">⬇ 32 Bit MOD Download</button>
-<button onclick="window.location.href='https://xpshort.com/4XC7N2'">⬇ 64 Bit MOD Download</button>
+<div class="counter">
+⬇ Downloads: <span id="downloadCount">1523</span>
+</div>
+
+<div class="counter">
+👁 Online Visitors: <span id="visitorCount">87</span>
+</div>
+
+<button onclick="download32()">⬇ 32 Bit MOD Download</button>
+<button onclick="download64()">⬇ 64 Bit MOD Download</button>
 <button onclick="window.location.href='https://t.me/AM_YTSupport'">📢 Telegram Support</button>
 <button onclick="window.location.href='https://youtube.com/@AbhiModszYT'">▶ YouTube Channel</button>
 
@@ -140,16 +149,16 @@ button:hover{
 </div>
 
 <script>
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
 
-const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize=14;
+const columns=canvas.width/fontSize;
+const drops=[];
 
 for(let i=0;i<columns;i++) drops[i]=1;
 
@@ -172,6 +181,38 @@ function draw(){
 }
 
 setInterval(draw,33);
+
+let count=1523;
+
+function updateCounter(){
+    document.getElementById("downloadCount").innerText=count;
+}
+
+function download32(){
+    count++;
+    updateCounter();
+    window.location.href="https://xpshort.com/p56V";
+}
+
+function download64(){
+    count++;
+    updateCounter();
+    window.location.href="https://xpshort.com/4XC7N2";
+}
+
+let visitors=Math.floor(Math.random()*50)+80;
+
+function updateVisitors(){
+    let change=Math.floor(Math.random()*3)-1;
+    visitors+=change;
+
+    if(visitors<75) visitors=75;
+    if(visitors>120) visitors=120;
+
+    document.getElementById("visitorCount").innerText=visitors;
+}
+
+setInterval(updateVisitors,3000);
 </script>
 
 </body>
