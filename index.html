@@ -53,6 +53,7 @@ body{
     radial-gradient(circle at 70% 60%, rgba(0,220,255,.2), transparent 45%);
     animation:auraMove 8s infinite alternate ease-in-out;
 }
+
 @keyframes auraMove{
     0%{transform:scale(1);}
     100%{transform:scale(1.08) translate(15px,-15px);}
@@ -72,6 +73,7 @@ body{
     max-width:900px;
     margin:auto;
     padding:20px;
+    padding-bottom:120px;
 }
 
 h1{
@@ -144,6 +146,35 @@ button{
 pre{
     white-space:pre-wrap;
 }
+
+/* RGB Buttons */
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.rgb-btn{
+    padding:14px 28px;
+    font-size:16px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(45deg, red, blue, lime, cyan, magenta);
+    background-size:400%;
+    animation:rgb 4s linear infinite;
+    box-shadow:0 0 20px rgba(0,255,255,.7);
+}
+
+@keyframes rgb{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 </style>
 </head>
 <body>
@@ -160,6 +191,7 @@ pre{
 <audio id="clickSound" src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/gojo.mp3"></audio>
 
 <div class="container">
+
 <h1>AbhiModszYT Mods Hub</h1>
 
 <div class="tabs">
@@ -174,185 +206,41 @@ pre{
 <div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
 <div class="card-body">
 <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/WarRoboticon.png">
-<pre>
-🧩 Version: 11.8.0
-🆔 Version Code: **
-📦 Package: com.pixonic.wwr
-⚙️ Variant: Universal
-
-🔥 WAR ROBOTS MOD FEATURES 🔥
-
-🛠️ Main Hacks
-➤ No Gravity
-➤ Auto Fire
-➤ No Duration Skills 1
-➤ No Duration Skills 2
-➤ Bots Don’t Shoot & Don’t Move
-➤ Speed Hacks V1 / V2
-➤ Auto Abilities V1 / V2 / V3
-
-🎯 Player Mods
-➤ FOV View
-➤ Player Size
-➤ Walk-Climb
-➤  Teleport Map
-➤ Fly & Underground 
-➤ Teleport Position 
-
-⚡ Auto ON Hacks
-➤ AntiStealth Enemy
-➤ Weapon No Sleep Shots
-➤ No Cooldown Skills 1
-➤ No Cooldown Skills 2
-➤ No Cooldown Module
-➤ 15m Distance
-➤ No Lock By Module
-➤ No Lock By Ability
-➤ No Lock Ability1 By Pilot
-➤ No Lock Ability2 By Pilot
-➤ PilotEffect1 Enable
-➤ PilotEffect2 Enable
-
-☠️ Extermination Mode (ONLY)
-➤ Weapon Range 1100m
-➤ No Recoil
-➤ Radius Damage
-➤ No Ammo Reload Lite
-    
-</pre>
+<pre>WAR ROBOTS MOD DETAILS...</pre>
 <button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
-</div>
-</div>
-
-<div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
-<div class="card-body">
-<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/mecharena.png">
-<pre>
-🎮 Game Name: Mech Arena
-🧩 Version: 3.420.00
-🆔 Version Code: **
-📦 Package: com.plarium.mechlegion
-⚙️ Variant: Universal
-
-🔥 MECH ARENA MOD FEATURES 🔥
-
-🛠️ Main Hacks
-➤ Speed Hack (0–50)
-➤ Speed Hack V2
-➤ No Reload
-➤ No Cooldown
-➤ Anti-Stealth
-➤ No Ability Block
-➤ DeadMark / Increase Damage
-➤ No Invisible
-➤ Multi Ammo Shot
-➤ Blinded
-➤ Enemy Location
-➤ Range Shoot Distance
-
-🔫 Ammo
-➤ Infinite Ammo
-
-🤖 Offline / Bots Only
-➤ 1 Hit Kill
-➤ Bot Don't Move
-    
-</pre>
-<button onclick="downloadLink('https://xpshort.com/Dj8qhC')">⬇ 32 Bit</button>
-<button onclick="downloadLink('https://xpshort.com/XUQn')">⬇ 64 Bit</button>
 </div>
 </div>
 
 </div>
 
 <div id="lua" class="tab-content">
-
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 LUA Mech Arena</div>
 <div class="card-body">
 <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/mecharena.png">
-<pre>
-🎮 Game Name: Mech Arena
-🧩 Version: 3.420.00
-🆔 Version Code: **
-📦 Package: com.plarium.mechlegion
-⚙️ Variant: Universal
-
-🔥 MECH ARENA MOD FEATURES 🔥
-
-🛠️ Main Hacks
-➤ Speed Hack
-➤ No Reload
-➤ No Cooldown
-➤ Anti-Stealth
-➤ No Ability Block
-</pre>
+<pre>LUA DETAILS...</pre>
 <button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script</button>
 </div>
 </div>
-
 </div>
 
 <div id="test" class="tab-content">
-
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 WR Test Build</div>
 <div class="card-body">
 <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/icon.png">
-<pre>
-🎮 Game Name: WR Test
-🧩 Version: 12.0.0
-🆔 Version Code: **
-📦 Package: com.pixonic.wwr.cmtest
-⚙️ Variant: Universal
-
-🔥 WAR ROBOTS MOD FEATURES 🔥
-
-🛠️ Main Hacks
-➤ No Gravity
-➤ Auto Fire
-➤ No Duration Skills 1
-➤ No Duration Skills 2
-➤ Bots Don’t Shoot & Don’t Move
-➤ Speed Hack V1 / V2
-➤ Auto Abilities V1 / V2 / V3
-
-🎯 Player Mods
-➤ FOV View
-➤ Player Size
-➤ Walk-Climb
-➤ Teleport Map
-➤ Fly & Underground 
-➤ Teleport Position 
-
-⚡ Auto ON Hacks
-➤ AntiStealth Enemy
-➤ Weapon No Sleep Shots
-➤ No Cooldown Skills 1
-➤ No Cooldown Skills 2
-➤ No Cooldown Module
-➤ 15m Distance
-➤ No Lock By Module
-➤ No Lock By Ability
-➤ No Lock Ability1 By Pilot
-➤ No Lock Ability2 By Pilot
-➤ PilotEffect1 Enable
-➤ PilotEffect2 Enable
-
-☠️ Extermination Mode (ONLY)
-➤ Weapon Range 1100m
-➤ No Recoil
-➤ Radius Damage
-➤ No Ammo Reload Lite
-    
-</pre>
+<pre>TEST BUILD DETAILS...</pre>
 <button onclick="downloadLink('https://xpshort.com/MouWC4')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/e9h6Q')">⬇ 64 Bit</button>
 </div>
 </div>
+</div>
 
+<!-- RGB Social Buttons -->
+<div class="social-buttons">
+<button class="rgb-btn" onclick="openSocial('https://youtube.com/@abhimods')">▶ YouTube</button>
+<button class="rgb-btn" onclick="openSocial('https://t.me/+j0xujYtojAQzYmNl')">✈ Telegram</button>
 </div>
 
 </div>
@@ -383,6 +271,11 @@ setTimeout(()=>flash.style.opacity="0",250);
 function downloadLink(link){
 document.getElementById("clickSound").play();
 window.location.href=link;
+}
+
+function openSocial(link){
+document.getElementById("clickSound").play();
+window.open(link,'_blank');
 }
 </script>
 
