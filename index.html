@@ -14,7 +14,6 @@ body{
     overflow-x:hidden;
 }
 
-/* Loader */
 #loader{
     position:fixed;
     width:100%;
@@ -32,12 +31,7 @@ body{
     border-radius:12px;
     box-shadow:0 0 35px #00eaff;
 }
-#loader h2{
-    color:#00eaff;
-    text-shadow:0 0 20px #00eaff;
-}
 
-/* Background */
 .bg{
     position:fixed;
     width:100%;
@@ -49,7 +43,6 @@ body{
     z-index:-3;
 }
 
-/* Aura */
 #aura{
     position:fixed;
     width:100%;
@@ -65,7 +58,6 @@ body{
     100%{transform:scale(1.08) translate(15px,-15px);}
 }
 
-/* Eye Flash */
 #flash{
     position:fixed;
     width:100%;
@@ -76,24 +68,24 @@ body{
     z-index:50;
 }
 
-/* Container */
 .container{
     max-width:900px;
     margin:auto;
     padding:20px;
 }
+
 h1{
     text-align:center;
     text-shadow:0 0 20px #00eaff;
 }
 
-/* Tabs */
 .tabs{
     display:flex;
     justify-content:center;
     gap:10px;
     margin-bottom:20px;
 }
+
 .tab-btn{
     padding:10px 20px;
     background:black;
@@ -101,12 +93,7 @@ h1{
     border:1px solid #00eaff;
     cursor:pointer;
 }
-.tab-btn:hover{
-    background:#00eaff;
-    color:black;
-}
 
-/* Cards */
 .card{
     background:rgba(0,0,0,.85);
     border:1px solid #00eaff;
@@ -114,15 +101,28 @@ h1{
     margin-top:15px;
     box-shadow:0 0 15px #00eaff;
 }
+
 .card-header{
     padding:15px;
     cursor:pointer;
     font-weight:bold;
 }
+
 .card-body{
     display:none;
     padding:15px;
 }
+
+.card-body img{
+    width:100%;
+    max-height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+    border:1px solid #00eaff;
+    box-shadow:0 0 15px #00eaff;
+}
+
 button{
     width:100%;
     padding:12px;
@@ -132,16 +132,15 @@ button{
     border:1px solid #00eaff;
     cursor:pointer;
 }
-button:hover{
-    background:#00eaff;
-    color:black;
-}
+
 .tab-content{
     display:none;
 }
+
 .active{
     display:block;
 }
+
 pre{
     white-space:pre-wrap;
 }
@@ -150,8 +149,8 @@ pre{
 <body>
 
 <div id="loader">
-    <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif">
-    <h2>AbhiModszYT Loading...</h2>
+<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif">
+<h2>AbhiModszYT Loading...</h2>
 </div>
 
 <div class="bg"></div>
@@ -169,20 +168,18 @@ pre{
 <button class="tab-btn" onclick="openTab('test')">TEST BUILD</button>
 </div>
 
-<!-- APK -->
 <div id="apk" class="tab-content active">
 
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
 <div class="card-body">
+<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/WarRoboticon.png">
 <pre>
 Version: 11.8.0
 ➤ No Gravity
 ➤ Auto Fire
 ➤ Speed Hacks
 ➤ Teleport Map
-➤ AntiStealth Enemy
-➤ Weapon Range 1100m
 </pre>
 <button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
@@ -190,30 +187,14 @@ Version: 11.8.0
 </div>
 
 <div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 Robot Warfare</div>
-<div class="card-body">
-<pre>
-Version: 0.4.1
-➤ No Reload
-➤ Wall Shots
-➤ Auto Fire Beta
-➤ Fire Range 9999m
-</pre>
-<button onclick="downloadLink('https://xpshort.com/Vp18V8L')">⬇ Download</button>
-</div>
-</div>
-
-<div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
 <div class="card-body">
+<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/mecharena.png">
 <pre>
 Version: 3.420.00
 ➤ Speed Hack
 ➤ No Reload
-➤ Anti-Stealth
 ➤ Infinite Ammo
-➤ Blinded
-➤ Enemy Location
 </pre>
 <button onclick="downloadLink('https://xpshort.com/Dj8qhC')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/XUQn')">⬇ 64 Bit</button>
@@ -222,46 +203,32 @@ Version: 3.420.00
 
 </div>
 
-<!-- LUA -->
 <div id="lua" class="tab-content">
 
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 LUA Mech Arena</div>
 <div class="card-body">
+<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/mecharena.png">
 <pre>
 ➤ Speed Hack
 ➤ No Cooldown
-➤ No Reload
 </pre>
-<button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script Download</button>
-<button onclick="downloadLink('https://xpshort.com/Gzjjou')">⬇ 32bit APK</button>
-</div>
-</div>
-
-<div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 LUA War Robots</div>
-<div class="card-body">
-<pre>
-➤ 16 Features Added
-</pre>
-<button onclick="downloadLink('https://xpshort.com/Ky2Meb')">⬇ Script Download</button>
+<button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script</button>
 </div>
 </div>
 
 </div>
 
-<!-- TEST -->
 <div id="test" class="tab-content">
 
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 WR Test Build</div>
 <div class="card-body">
+<img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/icon.png">
 <pre>
 Version: 12.0.0
 ➤ Auto Fire
 ➤ Teleport
-➤ No Gravity
-➤ AntiStealth
 </pre>
 <button onclick="downloadLink('https://xpshort.com/MouWC4')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/e9h6Q')">⬇ 64 Bit</button>
@@ -274,31 +241,30 @@ Version: 12.0.0
 
 <script>
 window.addEventListener("load",()=>{
-    setTimeout(()=>{
-        loader.style.opacity="0";
-        setTimeout(()=>loader.style.display="none",1000);
-    },3500);
+setTimeout(()=>{
+loader.style.opacity="0";
+setTimeout(()=>loader.style.display="none",1000);
+},3500);
 });
 
 function openTab(tab){
-    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-    document.getElementById(tab).classList.add('active');
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+document.getElementById(tab).classList.add('active');
 }
 
 function toggleCard(el){
-    const body=el.nextElementSibling;
-    body.style.display=body.style.display==="block"?"none":"block";
+const body=el.nextElementSibling;
+body.style.display=body.style.display==="block"?"none":"block";
+document.getElementById("clickSound").play();
 
-    document.getElementById("clickSound").play();
-
-    const flash=document.getElementById("flash");
-    flash.style.opacity="1";
-    setTimeout(()=>flash.style.opacity="0",250);
+const flash=document.getElementById("flash");
+flash.style.opacity="1";
+setTimeout(()=>flash.style.opacity="0",250);
 }
 
 function downloadLink(link){
-    document.getElementById("clickSound").play();
-    window.location.href=link;
+document.getElementById("clickSound").play();
+window.location.href=link;
 }
 </script>
 
