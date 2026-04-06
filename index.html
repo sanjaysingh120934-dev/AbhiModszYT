@@ -9,7 +9,7 @@
 body{
     margin:0;
     background:black;
-    color:#00ff00;
+    color:#00ffcc;
     font-family:monospace;
     overflow-x:hidden;
 }
@@ -17,8 +17,6 @@ body{
 /* Loader */
 #loader{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background:black;
@@ -27,164 +25,123 @@ body{
     justify-content:center;
     align-items:center;
     z-index:9999;
-    transition:opacity 1s ease;
+    transition:1s;
 }
-
 #loader img{
-    width:220px;
+    width:230px;
     border-radius:12px;
-    box-shadow:0 0 30px #00ff00;
+    box-shadow:0 0 35px #00eaff;
 }
-
 #loader h2{
-    color:#00ff00;
-    margin-top:20px;
-    text-shadow:0 0 15px #00ff00;
+    color:#00eaff;
+    text-shadow:0 0 20px #00eaff;
 }
 
-/* Background GIF */
+/* Background */
 .bg{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    z-index:-3;
-    opacity:0;
-    transition:opacity 2s ease-in-out;
-    filter:brightness(0.35) contrast(1.2);
-}
-
-#bg1{
-    background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif');
-    opacity:1;
-}
-
-#bg2{
-    background-image:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/gojo2.gif');
-}
-
-/* Blue Aura */
-#aura{
-    position:fixed;
     top:0;
     left:0;
+    background:url('https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif') center/cover;
+    filter:brightness(0.35);
+    z-index:-3;
+}
+
+/* Aura */
+#aura{
+    position:fixed;
     width:100%;
     height:100%;
     z-index:-2;
     background:
-        radial-gradient(circle at 30% 40%, rgba(0,150,255,0.25), transparent 40%),
-        radial-gradient(circle at 70% 60%, rgba(0,200,255,0.20), transparent 45%);
+    radial-gradient(circle at 30% 40%, rgba(0,180,255,.25), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0,220,255,.2), transparent 45%);
     animation:auraMove 8s infinite alternate ease-in-out;
-    mix-blend-mode:screen;
 }
-
 @keyframes auraMove{
-    0%{
-        transform:scale(1) translate(0,0);
-    }
-    50%{
-        transform:scale(1.1) translate(-20px,20px);
-    }
-    100%{
-        transform:scale(1.05) translate(20px,-20px);
-    }
+    0%{transform:scale(1);}
+    100%{transform:scale(1.08) translate(15px,-15px);}
 }
 
-/* Main Container */
+/* Eye Flash */
+#flash{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,180,255,.4);
+    opacity:0;
+    pointer-events:none;
+    z-index:50;
+}
+
+/* Container */
 .container{
     max-width:900px;
     margin:auto;
     padding:20px;
 }
-
 h1{
     text-align:center;
-    text-shadow:0 0 20px #00ff00;
+    text-shadow:0 0 20px #00eaff;
 }
 
 /* Tabs */
 .tabs{
     display:flex;
-    gap:10px;
     justify-content:center;
+    gap:10px;
     margin-bottom:20px;
 }
-
 .tab-btn{
     padding:10px 20px;
-    border:1px solid #00ff00;
     background:black;
-    color:#00ff00;
+    color:#00eaff;
+    border:1px solid #00eaff;
     cursor:pointer;
 }
-
 .tab-btn:hover{
-    background:#00ff00;
+    background:#00eaff;
     color:black;
-}
-
-/* Tab Content */
-.tab-content{
-    display:none;
-}
-
-.active{
-    display:block;
 }
 
 /* Cards */
 .card{
-    background:rgba(0,0,0,0.85);
-    border:1px solid #00ff00;
+    background:rgba(0,0,0,.85);
+    border:1px solid #00eaff;
     border-radius:12px;
     margin-top:15px;
-    box-shadow:0 0 15px #00ff00;
+    box-shadow:0 0 15px #00eaff;
 }
-
 .card-header{
     padding:15px;
     cursor:pointer;
     font-weight:bold;
 }
-
 .card-body{
     display:none;
     padding:15px;
 }
-
-.card-body img{
-    width:100%;
-    border-radius:10px;
-    margin-bottom:15px;
-    border:1px solid #00ff00;
-}
-
-/* Buttons */
 button{
     width:100%;
     padding:12px;
     margin-top:10px;
     background:black;
-    color:#00ff00;
-    border:1px solid #00ff00;
+    color:#00eaff;
+    border:1px solid #00eaff;
     cursor:pointer;
 }
-
 button:hover{
-    background:#00ff00;
+    background:#00eaff;
     color:black;
 }
-
-/* Counter */
-.counter{
-    text-align:center;
-    margin-bottom:20px;
+.tab-content{
+    display:none;
 }
-
+.active{
+    display:block;
+}
 pre{
     white-space:pre-wrap;
 }
@@ -192,23 +149,19 @@ pre{
 </head>
 <body>
 
-<!-- Loader -->
 <div id="loader">
     <img src="https://raw.githubusercontent.com/sanjaysingh120934-dev/AbhiModszYT/main/Gojo.gif">
     <h2>AbhiModszYT Loading...</h2>
 </div>
 
-<!-- Background -->
-<div id="bg1" class="bg"></div>
-<div id="bg2" class="bg"></div>
+<div class="bg"></div>
 <div id="aura"></div>
+<div id="flash"></div>
+
+<audio id="clickSound" src="https://www.soundjay.com/buttons/button-16.mp3"></audio>
 
 <div class="container">
 <h1>AbhiModszYT Mods Hub</h1>
-
-<div class="counter">
-⬇ Downloads: <span id="downloadCount">1523</span> | 👁 Online: <span id="visitorCount">87</span>
-</div>
 
 <div class="tabs">
 <button class="tab-btn" onclick="openTab('apk')">APK</button>
@@ -220,33 +173,50 @@ pre{
 <div id="apk" class="tab-content active">
 
 <div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
+<div class="card-body">
+<pre>
+Version: 11.8.0
+➤ No Gravity
+➤ Auto Fire
+➤ Speed Hacks
+➤ Teleport Map
+➤ AntiStealth Enemy
+➤ Weapon Range 1100m
+</pre>
+<button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
+</div>
+</div>
+
+<div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 Robot Warfare</div>
 <div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/6/60/Robot_Warfare_cover.jpg">
 <pre>
 Version: 0.4.1
-Package: ru.azurinteractive.robotwarfare
 ➤ No Reload
-➤ Auto Fire
 ➤ Wall Shots
+➤ Auto Fire Beta
+➤ Fire Range 9999m
 </pre>
 <button onclick="downloadLink('https://xpshort.com/Vp18V8L')">⬇ Download</button>
 </div>
 </div>
 
 <div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 War Robots</div>
+<div class="card-header" onclick="toggleCard(this)">🚀 Mech Arena</div>
 <div class="card-body">
-<img src="https://upload.wikimedia.org/wikipedia/en/8/8b/War_Robots_cover.jpg">
 <pre>
-Version: 11.8.0
-Package: com.pixonic.wwr
-➤ Auto Fire
+Version: 3.420.00
 ➤ Speed Hack
-➤ Teleport
+➤ No Reload
+➤ Anti-Stealth
+➤ Infinite Ammo
+➤ Blinded
+➤ Enemy Location
 </pre>
-<button onclick="downloadLink('https://xpshort.com/p56V')">⬇ 32 Bit</button>
-<button onclick="downloadLink('https://xpshort.com/4XC7N2')">⬇ 64 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/Dj8qhC')">⬇ 32 Bit</button>
+<button onclick="downloadLink('https://xpshort.com/XUQn')">⬇ 64 Bit</button>
 </div>
 </div>
 
@@ -254,86 +224,82 @@ Package: com.pixonic.wwr
 
 <!-- LUA -->
 <div id="lua" class="tab-content">
+
 <div class="card">
-<div class="card-header" onclick="toggleCard(this)">🚀 Lua Script War Robots</div>
+<div class="card-header" onclick="toggleCard(this)">🚀 LUA Mech Arena</div>
 <div class="card-body">
+<pre>
+➤ Speed Hack
+➤ No Cooldown
+➤ No Reload
+</pre>
+<button onclick="downloadLink('https://xpshort.com/EXwAZR')">⬇ Script Download</button>
+<button onclick="downloadLink('https://xpshort.com/Gzjjou')">⬇ 32bit APK</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header" onclick="toggleCard(this)">🚀 LUA War Robots</div>
+<div class="card-body">
+<pre>
+➤ 16 Features Added
+</pre>
 <button onclick="downloadLink('https://xpshort.com/Ky2Meb')">⬇ Script Download</button>
 </div>
 </div>
+
 </div>
 
 <!-- TEST -->
 <div id="test" class="tab-content">
+
 <div class="card">
 <div class="card-header" onclick="toggleCard(this)">🚀 WR Test Build</div>
 <div class="card-body">
+<pre>
+Version: 12.0.0
+➤ Auto Fire
+➤ Teleport
+➤ No Gravity
+➤ AntiStealth
+</pre>
 <button onclick="downloadLink('https://xpshort.com/MouWC4')">⬇ 32 Bit</button>
 <button onclick="downloadLink('https://xpshort.com/e9h6Q')">⬇ 64 Bit</button>
 </div>
 </div>
-</div>
 
-<!-- Social -->
-<div class="card">
-<button onclick="window.location.href='https://t.me/AM_YTSupport'">📢 Telegram Support</button>
-<button onclick="window.location.href='https://youtube.com/@AbhiModszYT'">▶ YouTube Channel</button>
 </div>
 
 </div>
 
 <script>
-/* Loader */
-window.addEventListener("load", ()=>{
+window.addEventListener("load",()=>{
     setTimeout(()=>{
-        document.getElementById("loader").style.opacity="0";
-        setTimeout(()=>{
-            document.getElementById("loader").style.display="none";
-        },1000);
-    },4000);
+        loader.style.opacity="0";
+        setTimeout(()=>loader.style.display="none",1000);
+    },3500);
 });
 
-/* Tabs */
 function openTab(tab){
     document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
     document.getElementById(tab).classList.add('active');
 }
 
-/* Cards */
 function toggleCard(el){
     const body=el.nextElementSibling;
     body.style.display=body.style.display==="block"?"none":"block";
+
+    document.getElementById("clickSound").play();
+
+    const flash=document.getElementById("flash");
+    flash.style.opacity="1";
+    setTimeout(()=>flash.style.opacity="0",250);
 }
 
-/* Download Counter */
-let count=1523;
 function downloadLink(link){
-    count++;
-    document.getElementById("downloadCount").innerText=count;
+    document.getElementById("clickSound").play();
     window.location.href=link;
 }
-
-/* Visitors */
-let visitors=87;
-setInterval(()=>{
-    visitors+=Math.floor(Math.random()*3)-1;
-    if(visitors<75) visitors=75;
-    if(visitors>120) visitors=120;
-    document.getElementById("visitorCount").innerText=visitors;
-},3000);
-
-/* Background Switch */
-let current=1;
-setInterval(()=>{
-    if(current===1){
-        document.getElementById("bg1").style.opacity="0";
-        document.getElementById("bg2").style.opacity="1";
-        current=2;
-    }else{
-        document.getElementById("bg1").style.opacity="1";
-        document.getElementById("bg2").style.opacity="0";
-        current=1;
-    }
-},5000);
 </script>
 
 </body>
